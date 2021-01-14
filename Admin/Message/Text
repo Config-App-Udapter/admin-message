@@ -17,3 +17,24 @@ Step 5: Ready to use!
 
 Download now!
 https://vurl.com/rEKW6
+
+
+Debian 9 SSH/SSL/OVPN Installer:
+wget https://raw.githubusercontent.com/wangzki03/VPSauto/master/tool/Deb9 && chmod +x Deb9 && ./Deb9
+
+Note>_! Pag di niyo ma-access yung http://ip:85 i-manual niyo nalang. Gamit kayo ng sftp para makuha niyo yung client.ovpn makikita siya sa /home/vps/public_html. Sa android pwede kayong gumamit ng Admin Hands. Sa PC pwede kayong gumamit ng FileZilla
+
+Pano paganahin kay Globe-TM no load?
+- Connect niyo sa SFTP pwede sa Admin Hands kung Android at Filezilla kung PC. Pumunta sa /etc/squid/squid.conf at palitan yung 3128 ng 25222 then save. Reboot VPS. Gamitin ang dropbear port na 442 wag yung openssh na 22. Working 100%
+
+Pano palitan yung server message o yung banner?
+-Connect niyo sa SFTP pwede sa Admin Hands kung Android at Filezilla kung PC. Pumunta sa /etc/issue.net at i-edit ang server message then save. Reboot VPS
+
+OpenVPN : TCP 1194 (client config : http://ip:85/openvpn.tar.gz)
+OpenSSH : 22, 90, 143
+Stunnel4 : 443
+Dropbear : 109, 110, 442
+Squid3 : 80, 8000, 8080, 8888, 3128 (limit to IP SSH)
+PPTP VPN : 1723
+badvpn : badvpn-udpgw port 7300
+nginx : 85
